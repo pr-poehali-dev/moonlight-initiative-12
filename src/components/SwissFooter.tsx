@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { QRCodeSVG } from "qrcode.react";
 
 export default function SwissFooter() {
   const ref = useRef(null);
@@ -41,9 +42,23 @@ export default function SwissFooter() {
               >
                 🇨🇭
               </motion.h1>
-              <div className="text-right">
+              <div className="text-right flex flex-col items-end gap-3">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="bg-white p-2 rounded-lg"
+                >
+                  <QRCodeSVG
+                    value="https://moonlight-initiative-12--preview.poehali.dev/"
+                    size={80}
+                    bgColor="#ffffff"
+                    fgColor="#000000"
+                  />
+                </motion.div>
+                <p className="text-white/50 text-xs">Открыть сайт</p>
                 <p className="text-white/70 text-sm">Швейцарская Конфедерация</p>
-                <p className="text-white/50 text-xs mt-1">{new Date().getFullYear()}</p>
+                <p className="text-white/50 text-xs">{new Date().getFullYear()}</p>
               </div>
             </div>
           </div>
