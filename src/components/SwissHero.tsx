@@ -31,6 +31,14 @@ export default function SwissHero() {
         >
           Конфедерация контрастов
         </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-xs md:text-sm text-white/50 uppercase tracking-widest mb-3"
+        >
+          Феномен Швейцарии: как устроена страна контрастов
+        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
